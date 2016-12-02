@@ -7,11 +7,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Web Map</h1>
+        <h1>KooL</h1>
         <nav role="navigation">
           <ul>
             <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
             <li><NavLink to="/logged">Logged</NavLink></li>
+            <li><NavLink to="/contact">Contact</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
             <br/>
             {this.props.children}
