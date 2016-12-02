@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NavLink from './modules/NavLink';
+import NavLink from './components/NavLink';
 
 class App extends Component {
   render() {
