@@ -6,7 +6,7 @@ import Logged from './components/Logged';
 import About from './components/About';
 import Home from './components/Home';
 import UrlParamsNavExample from './components/UrlParamsNavExample';
-import './index.css';
+import '../assets/styles/index.css';
 
 ReactDOM.render(
   <Router history={browserHistory}>

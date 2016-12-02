@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import '../../App.css';
+import '../../../assets/styles/App.css';
 
 export default React.createClass({
   render() {
