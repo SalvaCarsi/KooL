@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NavLink from './modules/NavLink';
 
 class App extends Component {
   render() {
     // TODO move this url to config file
-    const spotifyValidationUrl = 'https://accounts.spotify.com/authorize?client_id=0c1b513f65f54083a4e0fca663fa3693&redirect_uri=http://localhost:3000/&response_type=token';
+    const spotifyValidationUrl = 'https://accounts.spotify.com/authorize?' +
+      'client_id=0c1b513f65f54083a4e0fca663fa3693&redirect_uri=http://localhost:3000/&response_type=token';
     return (
       <div className="App">
         <div className="App-header">
@@ -17,6 +19,17 @@ class App extends Component {
         </p>
         <div>
           <a href={spotifyValidationUrl}>Login with Spotify!</a>
+        </div>
+        <div>
+          <h1>Web Map</h1>
+          <nav role="navigation">
+            <ul>
+              <li><NavLink to="/Logged">Logged</NavLink></li>
+              <li><NavLink to="/About">About</NavLink></li>
+              <br/>
+              {this.props.children}
+            </ul>
+          </nav>
         </div>
       </div>
     );
