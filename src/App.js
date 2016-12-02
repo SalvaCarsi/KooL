@@ -5,7 +5,7 @@ import NavLink from './modules/NavLink';
 
 class App extends Component {
   render() {
-    // TODO move this url to config file
+    // TODO move the url to config file
     const spotifyValidationUrl = 'https://accounts.spotify.com/authorize?' +
       'client_id=0c1b513f65f54083a4e0fca663fa3693&redirect_uri=http://localhost:3000/&response_type=token';
     return (
