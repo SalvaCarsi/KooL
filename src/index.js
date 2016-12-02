@@ -8,6 +8,9 @@ import Home from './components/Home';
 import UrlParamsNavExample from './components/UrlParamsNavExample';
 import '../assets/styles/index.css';
 
+/*
+  Starting point for rendering the application
+ */
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
