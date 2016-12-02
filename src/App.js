@@ -24,8 +24,8 @@ class App extends Component {
           <h1>Web Map</h1>
           <nav role="navigation">
             <ul>
-              <li><NavLink to="/Logged">Logged</NavLink></li>
-              <li><NavLink to="/About">About</NavLink></li>
+              <li><NavLink to="/logged">Logged</NavLink></li>
+              <li><NavLink to="/about">About</NavLink></li>
               <br/>
               {this.props.children}
             </ul>

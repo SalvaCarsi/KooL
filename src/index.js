@@ -10,8 +10,9 @@ import './index.css';
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <Route path="/logged" component={Logged}/>
-      <Route path="/logged/:userName/:token" component={UrlParamsNavExample}/>
+      <Route path="/logged" component={Logged}>
+        <Route path="/logged/:userName/:token" component={UrlParamsNavExample}/>
+      </Route>
       <Route path="/about" component={About}/>
     </Route>
   </Router>,
