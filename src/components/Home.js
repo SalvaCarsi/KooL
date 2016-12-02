@@ -2,6 +2,17 @@ import React from 'react';
 import logo from '../../assets/images/logo.svg';
 
 export default React.createClass({
+
+  getSpotifyToken(){
+    return this.getURLHashParameter('access_token');
+  },
+
+  getURLHashParameter : function(name) {
+    return decodeURI(
+      (new RegExp('[#|&]' + name + '=' + '(.+?)(&|$)').exec(location.hash)||[,null])[1]
+    );
+  },
+
   render() {
     // TODO move the url to config file
     const spotifyValidationUrl = 'https://accounts.spotify.com/authorize?' +
@@ -18,6 +29,7 @@ export default React.createClass({
         <div>
           <a href={spotifyValidationUrl}>Login with Spotify!</a>
         </div>
+        <div>Spotify token: {this.getSpotifyToken()}</div>
       </div>
     );
   }

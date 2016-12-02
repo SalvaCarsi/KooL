@@ -7,11 +7,11 @@ export default React.createClass({
   },
 
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); //cancelling the submit action from the button
     const userName = event.target.elements[0].value;
     const token = event.target.elements[1].value;
     const path = `/logged/${userName}/${token}`;
-    this.context.router.push(path);
+    this.context.router.push(path); //navigating to a new path
   },
 
   render() {
