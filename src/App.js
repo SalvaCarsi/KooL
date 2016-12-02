@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavLink from './components/NavLink';
+import NavLink from './components/helpers/NavLink';
 import { IndexLink } from 'react-router';
 
 class App extends Component {
