@@ -1,16 +1,32 @@
 import React from 'react';
 import logo from '../../assets/images/logo.svg';
-
 export default React.createClass({
 
-  getSpotifyToken(){
+  callAjax(url){
+    // compatible with IE7+, Firefox, Chrome, Opera, Safari
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function(){
+      if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+        document.getElementById("my-info").innerHTML = xmlhttp.responseText.toString();
+      }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.setRequestHeader('Authorization','Bearer '+this.getSpotifyTokenFromURL());
+    xmlhttp.send();
+  },
+
+  getSpotifyTokenFromURL(){
     return this.getURLHashParameter('access_token');
   },
 
   getURLHashParameter : function(name) {
     return decodeURI(
-      (new RegExp('[#|&]' + name + '=' + '(.+?)(&|$)').exec(location.hash)||[,null])[1]
+      (new RegExp('[#|&]' + name + '=(.+?)(&|$)').exec(location.hash)||[null])[1]
     );
+  },
+
+  getMyInfoFromSpotifyAPI(){
+    this.callAjax('https://api.spotify.com/v1/me');
   },
 
   render() {
@@ -29,7 +45,8 @@ export default React.createClass({
         <div>
           <a href={spotifyValidationUrl}>Login with Spotify!</a>
         </div>
-        <div>Spotify token: {this.getSpotifyToken()}</div>
+        <div>Spotify token: {this.getSpotifyTokenFromURL()}</div>
+        <div id="my-info">Response: {this.getMyInfoFromSpotifyAPI()}</div>
       </div>
     );
   }
