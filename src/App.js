@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
 import '../assets/styles/App.css';
-import NavLink from './components/helpers/NavLink';
-import { IndexLink } from 'react-router';
+import Navigation from './components/Navigation';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <h1>KooL</h1>
-        <nav role="navigation">
-          <ul>
-            <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-            <li><NavLink to="/logged">Logged</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
-            <br/>
-            {this.props.children}
-          </ul>
-        </nav>
+      <div className="App">
+        <div>
+          <Navigation/>
+        </div>
+        {this.props.children}
       </div>
     );
   }

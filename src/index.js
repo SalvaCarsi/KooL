@@ -9,9 +9,6 @@ import Contact from './components/Contact';
 import UrlParamsNavExample from './components/UrlParamsNavExample';
 import '../assets/styles/index.css';
 
-/*
-  Starting point for rendering the react application!
- */
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
